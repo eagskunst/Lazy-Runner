@@ -15,4 +15,4 @@ Background music: Jump and Run(8-Bit) by bart(http://opengameart.org/content/jum
 Jump sound: Platformer Jumping Sounds by dklon(http://opengameart.org/content/platformer-jumping-sounds).
 
 
-You can download the APK from here: http://www.mediafire.com/file/u2nw87odtl0d2gg/Lazy_Runner.apk
+You can download the APK from here: http://www.mediafire.com/file/jjsgoeso1t0663g/Lazy_Runner.apk
