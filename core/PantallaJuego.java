@@ -3,6 +3,7 @@ package com.lazyrunner;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
@@ -118,15 +119,23 @@ public class PantallaJuego extends PantallaBase {
     @Override
     public void render(float delta) {
         //Al comenzar el render, siempre se llama a estos métodos para evitar problemas de color.
+        float inpl = 0.5f;
         Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act();
         mundo.step(delta,6,2);
+
+        stage.getCamera().position.x = player.getX() + 210; //Solución al bug que, despues de un tiempo, el personaje desaparece de la pantalla.
+
         if(player.getX()>100 && player.isVivo()){
-            float velocidad = Constantes.VELOCIDAD_JUGADOR * delta * PIXELS_IN_METER;//Si la distancia recorrida por el jugador es > a 100, que se mueva la camara con el.
+            float velocidad = (Constantes.VELOCIDAD_JUGADOR * delta * PIXELS_IN_METER) - 0.03f;//Si la distancia recorrida por el jugador es > a 100, que se mueva la camara con el.
             stage.getCamera().translate(velocidad, 0, 0);
             score++;
             GenerarProfesores(); //Se generan profesores mientras este vivo.
+            if(!fondoMusic.isPlaying()){
+                fondoMusic.setVolume(0.75f);
+                fondoMusic.play();
+            }
         }
         if(Gdx.input.justTouched()){
             salto.play(0.5f);//En caso de saltar, que se reproduzca su respectivo sonido
@@ -135,7 +144,7 @@ public class PantallaJuego extends PantallaBase {
         En caso de salto continuo y no este saltando,
         que se reproduzca su respectivo sonido
          */
-        if(Gdx.input.isTouched() && !player.isSaltando()){
+        if(Gdx.input.isTouched() && !player.isSaltando() && player.isVivo()){
             salto.play(0.5f);
         }
 
