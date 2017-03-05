@@ -5,7 +5,7 @@ Almost all classes are explained in their source. In english and spanish.
 
 You can download the complete Source code and the .APK on the Release button.
 
-Credits:
+# Credits:
 danirod for his amazing tutorials (https://github.com/danirod).
 
 Floor: White Stone Tile Floor by Tizian (http://opengameart.org/content/white-stone-tile-floor-256px)
