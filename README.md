@@ -3,6 +3,8 @@ My first videogame. Written in Java/Android using libGDX framework and Android S
 
 Almost all classes are explained in their source. In english and spanish. 
 
+You can download the complete Source code and the .APK on the Release button.
+
 Credits:
 danirod for his amazing tutorials (https://github.com/danirod).
 
@@ -14,5 +16,4 @@ Background music: Jump and Run(8-Bit) by bart(http://opengameart.org/content/jum
 
 Jump sound: Platformer Jumping Sounds by dklon(http://opengameart.org/content/platformer-jumping-sounds).
 
-
-You can download the APK from here: http://www.mediafire.com/file/jjsgoeso1t0663g/Lazy_Runner.apk
+Pending to add: How to Build.
